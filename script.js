@@ -23,16 +23,16 @@ var soundKey = {
     "yellow":new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3")
 };
 
-function playSound(color){
-    soundKey[color].play();
-    sondKey[color].pause();
+async function playSound(color){
+    await soundKey[color].play();
+    return ;
 }
 
-document.getElementById("start").addEventListener("click", startGame);
-document.getElementById("checkID").addEventListener("click", strictBox);
+document.getElementById("start").onclick = startGame;
+document.getElementById("checkID").onclick = strictBox;
 
 for (var i = 0; i < colorButton.length; i++) {
-    colorButton[i].addEventListener("click", colorClick);
+    colorButton[i].onclick = colorClick;
 }
 
 
@@ -86,12 +86,12 @@ function addColor(){
     }
 }
 
-function playColor(i){
+async function playColor(i){
     var color = gameSequence[i];
 
-    setTimeout(function(){
+    setTimeout(async function(){
         document.getElementById(color).classList.add("light");
-        playSound(color);
+        await playSound(color);
         setTimeout(function(){
             document.getElementById(color).classList.remove("light");
         }, 500);    //gives a delay between the lightup effects when the pattern is shown to the player.  From the time the light is added
@@ -113,13 +113,13 @@ function displayTurns(){
 }
 
 
-function colorClick(){
+async function colorClick(){
     //TODO: Tie this to the click effect of the buttons, so the player doesnt get the CSS change outside of the "input" mode.
     //TODO:
 
     if (gameMode == "input"){ //make sure we are ready to accept user input
         var target = playerSequence.length;
-        playSound(this.id);
+        await playSound(this.id);
         if (this.id == gameSequence[target]){
             playerSequence.push(this.id);
             if (playerSequence.length == 20){ // win condition
