@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  font-family: monospace; }
+
+.container {
+  width: 90vmin;
+  height: 90vmin;
+  margin: 0 auto; }
+
+.simonBack {
+  background-color: #252525;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  overflow: hidden; }
+
+.colors {
+  float: left;
+  height: 50%;
+  width: 50%;
+  opacity: .4;
+  border: solid #252525 3.6vmin;
+  cursor: pointer; }
+
+.colors:active {
+  border: solid #252525 4.05vmin; }
+
+#green {
+  background-color: green;
+  border-radius: 100% 0% 0% 0%; }
+
+#red {
+  background-color: red;
+  border-radius: 0% 100% 0% 0%;
+  float: left; }
+
+#yellow {
+  border-radius: 0% 0% 100% 0%;
+  background-color: yellow; }
+
+#blue {
+  background-color: blue;
+  border-radius: 0% 0% 0% 100%; }
+
+.menu {
+  z-index: 2;
+  position: relative;
+  background-color: #F3F3F3;
+  border: solid #252525 2.7vmin;
+  color: black;
+  height: 50%;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 25%;
+  margin-bottom: 25%;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle; }
+
+.menu p {
+  position: absolute;
+  top: 10%;
+  margin: 0;
+  left: 19%;
+  display: inline-block; }
+
+#simon {
+  font-size: 9vmin; }
+
+#turns {
+  border-radius: 10%;
+  position: absolute;
+  top: 40%;
+  background-color: #7D7D7D;
+  height: 20%;
+  width: 35%;
+  left: 10%;
+  font-size: 5.85vmin;
+  box-shadow: inset 1px 1px 1px 1px; }
+
+#strict {
+  position: absolute;
+  top: 40%;
+  height: 20%;
+  width: 35%;
+  right: 10%;
+  border-radius: 10%;
+  background-color: green;
+  box-shadow: inset 1px 1px 1px 1px; }
+
+#strict input {
+  display: none; }
+
+#slider {
+  position: relative;
+  cursor: pointer;
+  height: 100%;
+  padding-top: 10%;
+  transition: .4s;
+  overflow: hidden;
+  border-radius: 10%; }
+
+#slider:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 10%;
+  left: 0%;
+  margin-top: -10%;
+  background-color: #7D7D7D;
+  transition: .4s;
+  border-radius: 10%;
+  box-shadow: 1px 1px;
+  overflow: hidden; }
+
+input:checked + #slider:before {
+  position: absolute;
+  left: 90%;
+  border-radius: 10%; }
+
+input:not(:checked) + #slider:after {
+  font-size: 3.33vmin;
+  content: "EASY"; }
+
+input:checked + #slider:after {
+  border-radius: 10%;
+  font-size: 3.33vmin;
+  content: "STRICT"; }
+
+input:checked + #slider {
+  background-color: red;
+  border-radius: 10%;
+  box-shadow: inset 1px 1px 1px 1px; }
+
+#start {
+  background-color: Yellow;
+  position: absolute;
+  left: 30%;
+  top: 65%;
+  height: 20%;
+  width: 40%;
+  padding: 2.5%;
+  font-size: 4.5vmin;
+  border-radius: 10%;
+  box-shadow: 1px 1px 1px 1px;
+  cursor: pointer; }
+
+#start:active {
+  transform: translate(2px, 2px);
+  box-shadow: inset 1px 1px 1px 1px; }
+
+.light {
+  opacity: 1; }
