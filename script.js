@@ -25,6 +25,7 @@ var soundKey = {
 
 function playSound(color){
     soundKey[color].play();
+    sondKey[color].pause();
 }
 
 document.getElementById("start").addEventListener("click", startGame);
